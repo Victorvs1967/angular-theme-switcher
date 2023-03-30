@@ -1,9 +1,9 @@
-name: Angular Ttemes
+name: Angular Themes
 on: workflow_dispatch
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
       - name: Print to console
-      - run: echo Hello GitHub Actions
-      
+        run: echo Hello GitHub Actions
+
