@@ -43,6 +43,13 @@ jobs:
           key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
         run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: dist
   deploy:
     needs: build
     runs-on: self-hosted
