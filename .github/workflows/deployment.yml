@@ -1,0 +1,29 @@
+name: Deploy Angular App
+on:
+  push:
+    branches:
+      - 'main'
+      - 'prod'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Lint Application
+        run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Deploy Application
+        run: npm run build
+      - name: Deploy App
+        run: echo Deploying app...
