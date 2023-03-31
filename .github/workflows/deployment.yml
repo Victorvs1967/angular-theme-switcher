@@ -8,7 +8,7 @@ on:
       - '.github/workflows/*'
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
@@ -45,7 +45,7 @@ jobs:
         run: npm ci
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Get build Project
         uses: actions/download-artifact@v3
