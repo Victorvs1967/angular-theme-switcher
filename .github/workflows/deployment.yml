@@ -1,7 +1,16 @@
 name: Deploy Angular App
 on: push
 jobs:
-  deploy:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Lint Application
+        run: npm run lint
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
