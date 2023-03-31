@@ -22,6 +22,6 @@ jobs:
       - name: Get build Project
         uses: actions/download-artifact@v3
         with:
-          name: my-artifact
+          name: build-files
       - name: Display structure of downloaded files
         run: ls -R
