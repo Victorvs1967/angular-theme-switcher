@@ -19,3 +19,5 @@ jobs:
         run: npm ci
       - name: Deploy Application
         run: npm run build
+      - name: Deploy App
+        run: echo Deploying app...
