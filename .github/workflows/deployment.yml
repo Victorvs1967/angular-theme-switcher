@@ -1,7 +1,7 @@
-name: Test Angular App
+name: Deploy Angular App
 on: push
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
