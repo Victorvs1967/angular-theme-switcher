@@ -28,7 +28,7 @@ jobs:
   build:
     needs: lint
     continue-on-error: true
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
