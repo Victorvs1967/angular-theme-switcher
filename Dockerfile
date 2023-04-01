@@ -9,7 +9,7 @@ RUN npm install --legacy-peer-deps --omit=optional && npm cache clean --force
 ENV PATH="/home/app/node_modules/.bin:$PATH"
 
 COPY . .
-RUN npm run build --prod
+RUN ng build
 
 FROM nginx:latest
 COPY default.conf /etc/nginx/conf.d
