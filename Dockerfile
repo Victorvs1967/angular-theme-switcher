@@ -6,7 +6,7 @@ WORKDIR /home/app
 RUN npm install -g @angular/cli
 COPY package*.json ./
 RUN npm install --legacy-peer-deps --omit=optional && npm cache clean --force
-ENV PATH="/ho me/app/node_modules/.bin:$PATH"
+ENV PATH="/home/app/node_modules/.bin:$PATH"
 
 COPY . .
 RUN npm run build --prod
@@ -15,6 +15,5 @@ FROM nginx:latest
 COPY default.conf /etc/nginx/conf.d
 COPY --from=node /home/app/dist /usr/share/nginx/html
 
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off"]
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off"]
