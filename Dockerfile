@@ -14,6 +14,3 @@ RUN npm run build --prod
 FROM nginx:latest
 COPY default.conf /etc/nginx/conf.d
 COPY --from=node /home/app/dist /usr/share/nginx/html
-
-# EXPOSE 80
-# CMD ["nginx", "-g", "daemon off"]

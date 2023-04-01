@@ -52,4 +52,6 @@ jobs:
         with:
           push: true
           tags: victorvsm/angular-themes-switcher:latest
-          run:  docker run -b -p 4200:80 victorvsm/angular-themes-switcher:latest
+      -
+        name: Run image
+        run:  docker run -b -p 4200:80 victorvsm/angular-themes-switcher:latest
