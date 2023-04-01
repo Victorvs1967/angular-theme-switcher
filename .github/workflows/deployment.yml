@@ -7,7 +7,7 @@ on:
       - '.github/workflows/*'
 jobs:
   lint:
-    runs-on: self-hosted
+    runs-on: angular-theme
     steps:
       -
         name: Get repository code
@@ -32,7 +32,7 @@ jobs:
   build:
     needs: lint
     continue-on-error: true
-    runs-on: self-hosted
+    runs-on: angular-theme
     steps:
       -
         name: Set up QEMU
